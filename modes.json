@@ -1,0 +1,45 @@
+{
+	"bot_account": {
+		"login": "xxx",
+		"password": "xxx"
+	},
+	"bot_channel" : "139135984892641280",
+	"admin_role" : "syn|",
+	"modes" : {
+
+		"ictf":
+			{
+				"maxplayers": 8
+			},
+
+		"ift":
+			{
+				"maxplayers": 8
+			},
+		"itdm":
+			{
+				"maxplayers": 8
+			},
+		"ftag":
+			{
+				"maxplayers": 8
+			}
+		},
+	"servers" : {
+   "46.101.159.114:29000":
+        {
+                "rcon_port" : "30000",
+                "rcon_password": "xxx",
+                "stats_password" : "xxxx",
+                "stats_port" : "29000"
+        },
+
+        "52.28.225.214:29000":
+	{
+		"rcon_port" : "30000",
+		"rcon_password": "xxxx",
+		"stats_password" : "xxxx",
+		"stats_port" : "29000"
+	}
+}
+}
