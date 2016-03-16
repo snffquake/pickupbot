@@ -150,24 +150,6 @@ class PickupBot:
             if msg.content.lower().startswith("!clear_sv_state"):# and author_has_admin_role(msg.author):
                 self.clear_sv_state(msg)
 
-
-    @asyncio.coroutine
-    def send_message_until_no_errors(self, function, *args, **kwargs):
-        self.client.send_typing(args[0].channel)
-        reply = function(*args,**kwargs) if len(args) == 1 else function()
-
-        if reply is None:
-            return
-        if isinstance(reply, tuple):
-            if len(reply) > 1:
-                yield from self.send_private_msgs(reply[1],"Your pickup '" + reply[2] + "' game is ready! Password to server: " + reply[
-                                               3])
-            reply = reply[0]
-        try:
-            yield from self.client.send_message(args[0].channel, reply)
-        except HTTPException:
-            yield from self.client.send_message(args[0].channel,reply)
-
     def get_status_of_pickup(self,mode):
         return "Current players for " + mode + ": " + self.users_obj_list_to_string_names(self.pickups[mode]) + ". ["+ str(len(self.pickups[mode])) + "/" + str(self.modes[mode]["maxplayers"])+"]"
 
